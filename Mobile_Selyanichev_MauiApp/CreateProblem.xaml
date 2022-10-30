@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile_Selyanichev_MauiApp.CreateProblem"
+            Title="CreateProblem"
+             BackgroundColor="{StaticResource Gray200}">
+    <ContentPage.Resources>
+        <Style  x:Key="RoomsButtonStyle"
+                TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HeightRequest" Value="45"/>
+            <Setter Property="WidthRequest" Value="200"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="500"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" />
+
+        <ImageButton Source="strelochka.png"
+                     MaximumHeightRequest="40"
+                     MaximumWidthRequest="40"
+                     Margin="5,5,0,0"
+                     Grid.Row="0"
+                     BackgroundColor="Transparent"
+                     Clicked="GoBackButton_Clicked"
+                     x:Name="GoBackButton"
+                     HorizontalOptions="Start" />
+
+
+        <RoundRectangle Grid.Row="1"
+                        Fill="{StaticResource Gray100}"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0,20,0,0"
+                        HeightRequest="500"
+                        WidthRequest="400"
+                        CornerRadius="25"/>
+
+        <RoundRectangle Grid.Row="1"
+                        Fill="{StaticResource Gray200}"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,385"
+                        HeightRequest="70"
+                        WidthRequest="380"
+                        CornerRadius="25"/>
+
+        <RoundRectangle Grid.Row="1"
+                        Fill="{StaticResource Gray200}"
+                        HorizontalOptions="Center"
+                        Margin="0,100,0,0"
+                        HeightRequest="390"
+                        WidthRequest="380"
+                        CornerRadius="25"/>
+
+        <Entry Grid.Row="1"
+               x:Name="PCID"
+               Placeholder="Номер компьютера"
+               FontSize="20"
+               TextColor="Black"
+               TextChanged="PCID_TextChanged"
+               Completed="PCID_Completed"
+               HorizontalOptions="Center"
+               VerticalTextAlignment="Start"
+               Margin="0,0,0,385"
+               HeightRequest="70"
+               WidthRequest="360"/>
+
+        <Entry Grid.Row="1"
+               x:Name="Problem"
+               Placeholder="Номер компьютера"
+               FontSize="20"
+               TextColor="Black"
+               TextChanged="Problem_TextChanged"
+               Completed="Problem_Completed"
+               HorizontalOptions="Center"
+               VerticalTextAlignment="Start"
+               Margin="0,100,0,0"
+               HeightRequest="390"
+               WidthRequest="360"/>
+
+        <Button Grid.Row="3"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="SubmitButton"
+                Text="Отправить"
+                Margin="0,0,0,0"
+                HorizontalOptions="Center"
+                Clicked="SubmitButton_Clicked"/>
+    </Grid>
+</ContentPage>

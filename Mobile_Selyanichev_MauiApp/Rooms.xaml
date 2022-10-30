@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile_Selyanichev_MauiApp.Rooms"
+             Title="Rooms"
+             BackgroundColor="{StaticResource Gray200}">
+    <ContentPage.Resources>
+        <Style  x:Key="RoomsButtonStyle"
+                TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="WidthRequest" Value="50"/>
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="58"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" />
+
+        <ImageButton Source="strelochka.png"
+                     MaximumHeightRequest="40"
+                     MaximumWidthRequest="40"
+                     Margin="5,5,0,0"
+                     Grid.Row="0"
+                     BackgroundColor="Transparent"
+                     Clicked="GoBackButton_Clicked"
+                     x:Name="GoBackButton"
+                     HorizontalOptions="Start" />
+        
+        <Button Grid.Row="1"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room221"
+                Text="221"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked" />
+
+        <Button Grid.Row="2"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room219"
+                Text="219"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+
+        <Button Grid.Row="3"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room218a"
+                Text="218a"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+        
+        <Button Grid.Row="4"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room218"
+                Text="218"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+
+        <Button Grid.Row="5"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room217"
+                Text="217"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+
+        <Button Grid.Row="6"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room216"
+                Text="216"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+        
+        <Button Grid.Row="7"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room215"
+                Text="215"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+        
+        <Button Grid.Row="8"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room214"
+                Text="214"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+        
+        <Rectangle Grid.Row="9" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" Margin="30,0,30,0" HeightRequest="5"/>
+        
+        <Button Grid.Row="10"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room213"
+                Text="213"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                Margin="0,0,0,15"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room227"
+                Text="227"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked"/>
+
+        <Button Grid.Row="5"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Margin="0,0,0,15"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room228"
+                Text="228"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked" />
+
+        <Button Grid.Row="6"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Margin="0,5,0,0"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room229"
+                Text="229"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked" />
+
+        <Button Grid.Row="7"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Margin="0,20,0,0"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room230"
+                Text="230"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked" />
+        
+        <Button Grid.Row="10"
+                Grid.Column="1"
+                Style="{DynamicResource RoomsButtonStyle}"
+                x:Name="Room205"
+                Text="205"
+                HorizontalOptions="Center"
+                Clicked="RoomButton_Clicked" />
+
+    </Grid>
+</ContentPage>

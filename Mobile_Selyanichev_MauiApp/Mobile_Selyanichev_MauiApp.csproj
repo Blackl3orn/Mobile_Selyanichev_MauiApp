@@ -48,11 +48,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Remove="Resources\Images\strelochka.png" />
+	  <Compile Remove="SolveProblem2.xaml.cs" />
+	  <Compile Remove="ViewModels\RoomsViewModel.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidResource Include="Resources\Images\strelochka.png" />
+	  <MauiXaml Remove="SolveProblem2.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\strelochka.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -65,12 +70,17 @@
 	  <MauiXaml Update="CreateProblem.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Rooms.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="SolveProblem.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Rooms.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 
 </Project>

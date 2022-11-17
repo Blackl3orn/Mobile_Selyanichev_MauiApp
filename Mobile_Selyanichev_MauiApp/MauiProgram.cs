@@ -1,4 +1,7 @@
-﻿namespace Mobile_Selyanichev_MauiApp;
+﻿using Mobile_Selyanichev_MauiApp.Services;
+using Mobile_Selyanichev_MauiApp.ViewModels;
+
+namespace Mobile_Selyanichev_MauiApp;
 
 public static class MauiProgram
 {
@@ -13,6 +16,16 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+        builder.Services.AddSingleton<CreateProblem>();
+		builder.Services.AddSingleton<AddProblemService>();
+		builder.Services.AddSingleton<CreateProblemViewModel>();
+
+        builder.Services.AddSingleton<SolveProblem>();
+        builder.Services.AddSingleton<GetProblemService>();
+        builder.Services.AddSingleton<SolveProblemViewModel>();
+
+        return builder.Build();
+
+		
 	}
 }

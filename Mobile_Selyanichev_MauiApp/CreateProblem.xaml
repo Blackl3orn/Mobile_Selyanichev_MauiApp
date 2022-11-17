@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile_Selyanichev_MauiApp.CreateProblem"
+             xmlns:viewmodel="clr-namespace:Mobile_Selyanichev_MauiApp.ViewModels"
+             x:DataType="viewmodel:CreateProblemViewModel"
             Title="CreateProblem"
              BackgroundColor="{StaticResource Gray200}">
     <ContentPage.Resources>
@@ -44,7 +46,7 @@
                         HorizontalOptions="FillAndExpand"
                         Margin="0,20,0,0"
                         HeightRequest="500"
-                        WidthRequest="400"
+                        WidthRequest="320"
                         CornerRadius="25"/>
 
         <RoundRectangle Grid.Row="1"
@@ -52,7 +54,7 @@
                         HorizontalOptions="Center"
                         Margin="0,0,0,385"
                         HeightRequest="70"
-                        WidthRequest="380"
+                        WidthRequest="300"
                         CornerRadius="25"/>
 
         <RoundRectangle Grid.Row="1"
@@ -60,7 +62,7 @@
                         HorizontalOptions="Center"
                         Margin="0,100,0,0"
                         HeightRequest="390"
-                        WidthRequest="380"
+                        WidthRequest="300"
                         CornerRadius="25"/>
 
         <Entry Grid.Row="1"
@@ -68,29 +70,28 @@
                Placeholder="Номер компьютера"
                FontSize="20"
                TextColor="Black"
-               TextChanged="PCID_TextChanged"
-               Completed="PCID_Completed"
+               Text="{Binding PcNumEntrytext}"
                HorizontalOptions="Center"
                VerticalTextAlignment="Start"
                Margin="0,0,0,385"
                HeightRequest="70"
-               WidthRequest="360"/>
+               WidthRequest="300"/>
 
         <Entry Grid.Row="1"
                x:Name="Problem"
-               Placeholder="Номер компьютера"
+               Placeholder="Проблема"
                FontSize="20"
                TextColor="Black"
-               TextChanged="Problem_TextChanged"
-               Completed="Problem_Completed"
+               Text="{Binding ProblemEntrytext}"
                HorizontalOptions="Center"
                VerticalTextAlignment="Start"
                Margin="0,100,0,0"
                HeightRequest="390"
-               WidthRequest="360"/>
+               WidthRequest="300"/>
 
         <Button Grid.Row="3"
                 Style="{DynamicResource RoomsButtonStyle}"
+                Command="{Binding AddProblemCommand}"
                 x:Name="SubmitButton"
                 Text="Отправить"
                 Margin="0,0,0,0"

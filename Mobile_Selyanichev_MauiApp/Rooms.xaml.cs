@@ -1,22 +1,35 @@
+using Mobile_Selyanichev_MauiApp.ViewModels;
+
 namespace Mobile_Selyanichev_MauiApp;
 
 public partial class Rooms : ContentPage
 {
-	public Rooms()
+    string text;
+
+	public Rooms(
+        string text
+      //  RoomsViewModel vm
+        )
 	{
-		InitializeComponent();
+        this.text = text;
+      //  vm.Navigation = Navigation;
+      //  BindingContext = vm;
+        InitializeComponent();
 	}
 
-	private void GoBackButton_Clicked(object sender, EventArgs e)
+    private void GoBackButton_Clicked(object sender, EventArgs e)
 	{
         Navigation.PopModalAsync();
     }
 
 	private void RoomButton_Clicked(object sender, EventArgs e)
 	{
-		// if нажата кнопка сообщить
-       // Navigation.PushModalAsync(new CreateProblem());
+        Button btn = (Button)sender;
+        // if нажата кнопка сообщить
+        if (text == "Сообщить")
+        Navigation.PushModalAsync(new CreateProblem(new CreateProblemViewModel(int.Parse(btn.Text))));
         // если вторая кнопка
-        Navigation.PushModalAsync(new SolveProblem());
+        if (text == "Проверить")
+        Navigation.PushModalAsync(new SolveProblem(new SolveProblemViewModel(int.Parse(btn.Text))));
     }
 }

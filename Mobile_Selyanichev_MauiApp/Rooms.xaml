@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
+<!--xmlns:viewmodel="clr-namespace:Mobile_Selyanichev_MauiApp.ViewModels"
+             x:DataType="viewmodel:RoomsViewModel"
+    Command="{Binding RoomButton_ClickedCommand}"-->
+    
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile_Selyanichev_MauiApp.Rooms"
+       
              Title="Rooms"
              BackgroundColor="{StaticResource Gray200}">
     <ContentPage.Resources>
@@ -46,7 +52,7 @@
                      Margin="5,5,0,0"
                      Grid.Row="0"
                      BackgroundColor="Transparent"
-                     Clicked="GoBackButton_Clicked"
+                     Clicked="GoBackButton_Clicked" 
                      x:Name="GoBackButton"
                      HorizontalOptions="Start" />
         
@@ -62,49 +68,49 @@
                 x:Name="Room219"
                 Text="219"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
-
+                Clicked="RoomButton_Clicked" />
+        
         <Button Grid.Row="3"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room218a"
                 Text="218a"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
+                Clicked="RoomButton_Clicked" />
         
         <Button Grid.Row="4"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room218"
                 Text="218"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
+                Clicked="RoomButton_Clicked" />
 
         <Button Grid.Row="5"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room217"
                 Text="217"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
+                Clicked="RoomButton_Clicked" />
 
         <Button Grid.Row="6"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room216"
                 Text="216"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
+                Clicked="RoomButton_Clicked" />
         
         <Button Grid.Row="7"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room215"
                 Text="215"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
+                Clicked="RoomButton_Clicked" />
         
         <Button Grid.Row="8"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room214"
                 Text="214"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
+                Clicked="RoomButton_Clicked" />
         
         <Rectangle Grid.Row="9" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" Margin="30,0,30,0" HeightRequest="5"/>
         
@@ -113,7 +119,7 @@
                 x:Name="Room213"
                 Text="213"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
+                Clicked="RoomButton_Clicked" />
 
         <Button Grid.Row="4"
                 Grid.Column="1"
@@ -122,7 +128,7 @@
                 x:Name="Room227"
                 Text="227"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked"/>
+                Clicked="RoomButton_Clicked" />
 
         <Button Grid.Row="5"
                 Grid.RowSpan="2"

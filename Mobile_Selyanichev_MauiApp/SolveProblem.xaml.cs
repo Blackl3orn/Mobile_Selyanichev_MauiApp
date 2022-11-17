@@ -1,10 +1,15 @@
+using Mobile_Selyanichev_MauiApp.ViewModels;
+
 namespace Mobile_Selyanichev_MauiApp;
 
 public partial class SolveProblem : ContentPage
 {
-	public SolveProblem()
+	public SolveProblem(SolveProblemViewModel vm)
 	{
-		InitializeComponent();
+        vm.Navigation = Navigation;
+        BindingContext = vm;
+        
+        InitializeComponent();
 	}
 
     private void GoBackButton_Clicked(object sender, EventArgs e)

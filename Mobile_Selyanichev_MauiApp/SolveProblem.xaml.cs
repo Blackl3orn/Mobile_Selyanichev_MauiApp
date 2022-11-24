@@ -10,6 +10,7 @@ public partial class SolveProblem : ContentPage
         BindingContext = vm;
         
         InitializeComponent();
+       // govno.ItemsSource = vm.Offices;
 	}
 
     private void GoBackButton_Clicked(object sender, EventArgs e)
@@ -17,10 +18,7 @@ public partial class SolveProblem : ContentPage
         Navigation.PopModalAsync();
     }
 
-    private void SubmitButton_Clicked(object sender, EventArgs e)
-    {
-        // удалить элемент из списка проблем
-    }
+    
 
 
     /* в связанном viewmodel класс под хранение строк, привязать к CollectionView*/

@@ -23,11 +23,12 @@ namespace Mobile_Selyanichev_MauiApp.ViewModels
         [ObservableProperty]
         string problemEntrytext;
 
-        int room;
+        [ObservableProperty]
+        string room;
 
         //AddProblemService addProblemService;
 
-        public CreateProblemViewModel(int room
+        public CreateProblemViewModel(string room
            // AddProblemService addProblemService
             )
         {

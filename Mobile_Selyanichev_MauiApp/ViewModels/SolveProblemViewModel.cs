@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Mobile_Selyanichev_MauiApp.Models;
 using Mobile_Selyanichev_MauiApp.Services;
 using System.Collections.ObjectModel;
@@ -7,19 +8,21 @@ namespace Mobile_Selyanichev_MauiApp.ViewModels
 {
     public partial class SolveProblemViewModel : ObservableObject
     {
-        int room;
+        [ObservableProperty]
+        string room;
 
         [ObservableProperty]
         INavigation navigation;
 
-        [ObservableProperty]
-        ObservableCollection<Office> offices = new ObservableCollection<Office>();
+
+        public ObservableCollection<Office> Offices { get; set; }
 
         [ObservableProperty]
         Office  off = new Office { id="232"}; // не спрашивайте
 
-        public SolveProblemViewModel(int room)
+        public SolveProblemViewModel(string room)
         {
+            Offices = new();
             this.room = room;
             //problems = new Problem();
             Update();
@@ -27,32 +30,21 @@ namespace Mobile_Selyanichev_MauiApp.ViewModels
 
         async Task Update()
         {
+            Offices.Clear();
+            Thread.Sleep(100);
             var problems = await GetProblemService.GetProblem(room); // НЕ СПРАШИВАЙТЕ 
-
-            offices.Add(problems.office);
-      
-
+            foreach(var something in problems.office)
+            {
+                Offices.Add(something);
+            }
            
-            //foreach (Problem problem in problems)
-            //{
-            //    this.problems.Add(problem);
-            //}
         }
-        //public async Task GetshitAsync()
-        //{
-        //    var govno = await GetProblemService.GetProblem(room);
 
-        //    foreach (var govn in govno)
-        //        problems.Add(govn);
-        //}
-        
-
-        //[RelayCommand]
-        //public async void SolveProblem()
-        //{
-
-        //    //удалятс
-            
-        //}
+        [RelayCommand]
+        public void SubmitProblem(string id)
+        {
+            SubmitProblemService.GetProblem(int.Parse(id));
+            Update();
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace Mobile_Selyanichev_MauiApp.Services
             client = new HttpClient() { BaseAddress = new Uri(Url_add) };
         }
        
-        public static async Task<Responce> AddProblem(int room, string pcNum, string problemDescr)
+        public static async Task<Responce> AddProblem(string room, string pcNum, string problemDescr)
         {
             var json = await client.GetStringAsync($"?office={room}&numberPc={pcNum}&problem={problemDescr}");
             var responce = JsonConvert.DeserializeObject<Responce>(json);

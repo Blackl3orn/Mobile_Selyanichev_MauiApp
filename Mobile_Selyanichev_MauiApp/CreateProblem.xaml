@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile_Selyanichev_MauiApp.CreateProblem"
              xmlns:viewmodel="clr-namespace:Mobile_Selyanichev_MauiApp.ViewModels"
-             x:DataType="viewmodel:CreateProblemViewModel"
+             x:Name="PageCreateProblem"
+            
             Title="CreateProblem"
              BackgroundColor="{StaticResource Gray200}">
     <ContentPage.Resources>
@@ -41,6 +42,13 @@
                      HorizontalOptions="Start" />
 
 
+        <Label Grid.Row="0"
+               FontSize="26"
+               Margin="0,5,0,0"
+               HorizontalOptions="Center"
+               Grid.ColumnSpan="2"
+               Text="{Binding Source={x:Reference PageCreateProblem}, Path=BindingContext.Room, StringFormat='{}Аудитория {0}'}" />
+        
         <RoundRectangle Grid.Row="1"
                         Fill="{StaticResource Gray100}"
                         HorizontalOptions="FillAndExpand"

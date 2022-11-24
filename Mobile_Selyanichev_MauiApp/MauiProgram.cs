@@ -24,6 +24,12 @@ public static class MauiProgram
         builder.Services.AddSingleton<GetProblemService>();
         builder.Services.AddSingleton<SolveProblemViewModel>();
 
+        builder.Services.AddSingleton<DoneProblem>();
+        builder.Services.AddSingleton<GetDoneProblemService>();
+        builder.Services.AddSingleton<DoneProblemViewModel>();
+
+        builder.Services.AddSingleton<SubmitProblemService>();
+
         return builder.Build();
 
 		

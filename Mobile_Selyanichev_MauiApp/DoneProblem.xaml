@@ -1,35 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mobile_Selyanichev_MauiApp.SolveProblem"
              xmlns:viewmodel="clr-namespace:Mobile_Selyanichev_MauiApp.ViewModels"
              xmlns:models="clr-namespace:Mobile_Selyanichev_MauiApp.Models"
-             Title="SolveProblem"
-             x:Name="PageSolveProblem"
+             x:DataType="viewmodel:DoneProblemViewModel"
+             x:Class="Mobile_Selyanichev_MauiApp.DoneProblem"
+             Title="DoneProblem"
              BackgroundColor="{StaticResource Gray200}">
-    <ContentPage.Resources>
-		<Style  x:Key="RoomsButtonStyle"
-                TargetType="Button">
-			<Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
-			<Setter Property="TextColor" Value="White" />
-			<Setter Property="HeightRequest" Value="45"/>
-			<Setter Property="WidthRequest" Value="200"/>
-			<Setter Property="FontSize" Value="22"/>
-			<Setter Property="CornerRadius" Value="10"/>
-			<Setter Property="Padding" Value="0"/>
-		</Style>
-	</ContentPage.Resources>
+
+
     
         <Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="50"/>
-			<RowDefinition Height="*"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
 
-		</Grid.RowDefinitions>
+            </Grid.RowDefinitions>
 
-		<Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" />
+            <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" />
 
-		<ImageButton Source="strelochka.png"
+            <ImageButton Source="strelochka.png"
                      MaximumHeightRequest="40"
                      MaximumWidthRequest="40"
                      Margin="5,5,0,0"
@@ -39,15 +29,15 @@
                      x:Name="GoBackButton"
                      HorizontalOptions="Start" />
 
-        <Label Grid.Row="0"
-               FontSize="26"
-               Margin="0,5,0,0"
-               HorizontalOptions="Center"
-               Grid.ColumnSpan="2"
-               Text="{Binding Source={x:Reference PageSolveProblem}, Path=BindingContext.Room, StringFormat='{}Аудитория {0}'}" />
-            
+            <Label Grid.Row="0"
+                   FontSize="26"
+                   Margin="0,5,0,0"
+                   HorizontalOptions="Center"
+                   Grid.ColumnSpan="2"
+                   Text="Журнал" />
+
         <ScrollView Grid.Row="1">
-            <CollectionView ItemsSource="{Binding Source={x:Reference PageSolveProblem}, Path=BindingContext.Offices, Mode=OneWay}">
+            <CollectionView ItemsSource="{Binding Offices}">
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Office">
@@ -72,10 +62,29 @@
                             <RoundRectangle Grid.Row="1"
                             Fill="{StaticResource Gray200}"
                             HorizontalOptions="Center"
-                            Margin="0,50,0,0"
-                            HeightRequest="390"
+                            Margin="0,0,0,280"
+                            HeightRequest="70"
                             WidthRequest="380"
                             CornerRadius="25"/>
+
+                            <RoundRectangle Grid.Row="1"
+                            Fill="{StaticResource Gray200}"
+                            HorizontalOptions="Center"
+                            Margin="0,180,0,0"
+                            HeightRequest="370"
+                            WidthRequest="380"
+                            CornerRadius="25"/>
+
+                            <Label Grid.Row="1"
+                                   x:Name="RoomID"
+                                   Text="{Binding office}"
+                                   FontSize="20"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"
+                                   VerticalTextAlignment="Start"
+                                   Margin="0,0,0,420"
+                                   HeightRequest="70"
+                                   WidthRequest="360"/>
 
                             <Label Grid.Row="1"
                                    x:Name="PCID"
@@ -84,7 +93,7 @@
                                    TextColor="Black"
                                    HorizontalOptions="Center"
                                    VerticalTextAlignment="Start"
-                                   Margin="0,0,0,430"
+                                   Margin="0,0,0,270"
                                    HeightRequest="70"
                                    WidthRequest="360"/>
 
@@ -95,19 +104,11 @@
                                    TextColor="Black"
                                    HorizontalOptions="Center"
                                    VerticalTextAlignment="Start"
-                                   Margin="0,55,0,0"
+                                   Margin="0,225,0,0"
                                    HeightRequest="390"
                                    WidthRequest="360"/>
-                            
-                            <Button Grid.Row="1"
-                                    
-                                     Style="{DynamicResource RoomsButtonStyle}"
-                                     x:Name="SubmitButton"
-                                     Text="Исправлено"
-                                     Margin="0,500,0,0"
-                                     HorizontalOptions="Center"
-                                     Command="{Binding Source={x:Reference PageSolveProblem}, Path=BindingContext.SubmitProblemCommand}"
-                                     CommandParameter="{Binding id}"/>
+
+
                         </Grid>
 
                     </DataTemplate>
@@ -115,5 +116,5 @@
             </CollectionView>
         </ScrollView>
     </Grid>
-   
+    
 </ContentPage>

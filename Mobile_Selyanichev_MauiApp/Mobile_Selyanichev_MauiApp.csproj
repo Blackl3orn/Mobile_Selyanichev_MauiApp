@@ -48,11 +48,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="NewPage1.xaml.cs" />
 	  <Compile Remove="SolveProblem2.xaml.cs" />
 	  <Compile Remove="ViewModels\RoomsViewModel.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="NewPage1.xaml" />
 	  <MauiXaml Remove="SolveProblem2.xaml" />
 	</ItemGroup>
 
@@ -68,6 +70,12 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="CreateProblem.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="DoneProblem.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SolveProblem.xaml">

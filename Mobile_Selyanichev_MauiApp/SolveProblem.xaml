@@ -29,6 +29,14 @@
 
 		<Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" />
 
+		<ImageButton 
+            		Source="tech_background.png"
+            		MaximumHeightRequest="100"
+            		MaximumWidthRequest="100"
+            		Margin="250,5,0,0"
+            		Grid.Row="0"
+            		BackgroundColor="Transparent"/>
+		
 		<ImageButton Source="strelochka.png"
                      MaximumHeightRequest="40"
                      MaximumWidthRequest="40"

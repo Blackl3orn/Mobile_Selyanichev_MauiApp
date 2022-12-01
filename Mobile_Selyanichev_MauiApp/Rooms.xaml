@@ -9,7 +9,9 @@
              x:Class="Mobile_Selyanichev_MauiApp.Rooms"
        
              Title="Rooms"
+             
              BackgroundColor="{StaticResource Gray200}">
+    
     <ContentPage.Resources>
         <Style  x:Key="RoomsButtonStyle"
                 TargetType="Button">
@@ -21,20 +23,22 @@
             <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Padding" Value="0"/>
         </Style>
-        
+       
     </ContentPage.Resources>
 
     <Grid>
+
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="58"/>
-            <RowDefinition Height="58"/>
-            <RowDefinition Height="58"/>
-            <RowDefinition Height="58"/>
-            <RowDefinition Height="58"/>
-            <RowDefinition Height="58"/>
-            <RowDefinition Height="58"/>
-            <RowDefinition Height="58"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="25"/>
             <RowDefinition Height="58"/>
         </Grid.RowDefinitions>
@@ -44,7 +48,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" />
+        <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2"   />
 
         <ImageButton Source="strelochka.png"
                      MaximumHeightRequest="40"
@@ -73,6 +77,14 @@
                HorizontalOptions="Center"
                Grid.ColumnSpan="2"
                Text="Аудитории" />
+
+
+        <Image x:Name="Image1"
+               Grid.Row="0"
+               Margin="0,0,180,0"
+               WidthRequest="32"
+               HorizontalOptions="Center"
+               Grid.ColumnSpan="2"/>
 
         <Button Grid.Row="1"
                 Style="{DynamicResource RoomsButtonStyle}"

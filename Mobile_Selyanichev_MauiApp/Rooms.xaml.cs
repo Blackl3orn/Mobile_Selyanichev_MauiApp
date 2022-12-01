@@ -14,11 +14,14 @@ public partial class Rooms : ContentPage
         {
             navigator = false;
             this.DoneButton.IsVisible = false;
+            this.Image1.Source = "teacher_background.png";
+
         }
         if (text == "Проверить")
         {
             navigator = true;
             this.DoneButton.IsVisible = true;
+            this.Image1.Source = "tech_background.png";
         }
     }
 

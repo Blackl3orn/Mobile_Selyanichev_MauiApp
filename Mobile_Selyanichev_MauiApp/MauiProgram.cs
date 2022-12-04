@@ -29,6 +29,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<DoneProblemViewModel>();
 
         builder.Services.AddSingleton<SubmitProblemService>();
+		 
 
         return builder.Build();
 

@@ -12,30 +12,22 @@ namespace Mobile_Selyanichev_MauiApp.ViewModels
 {
     public partial class DoneProblemViewModel : ObservableObject
     {
-        //int room;
-
         [ObservableProperty]
         INavigation navigation;
 
         [ObservableProperty]
         ObservableCollection<Office> offices = new ObservableCollection<Office>();
 
-        [ObservableProperty]
-        Office off = new Office { id = "232" }; // не спрашивайте
-
         public DoneProblemViewModel()
         {
-            //  this.room = room;
-            //problems = new Problem();
             Update();
         }
 
         async Task Update()
         {
-            var problems = await GetDoneProblemService.GetDoneProblem(); // НЕ СПРАШИВАЙТЕ 
+            var problems = await GetDoneProblemService.GetDoneProblem();
             foreach (var something in problems.office)
             {
-
                 offices.Add(something);
             }
         }

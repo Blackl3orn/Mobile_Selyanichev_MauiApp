@@ -4,9 +4,9 @@
              x:Class="Mobile_Selyanichev_MauiApp.CreateProblem"
              xmlns:viewmodel="clr-namespace:Mobile_Selyanichev_MauiApp.ViewModels"
              x:Name="PageCreateProblem"
-            
-            Title="CreateProblem"
+             Title="CreateProblem"
              BackgroundColor="{StaticResource Gray200}">
+    
     <ContentPage.Resources>
         <Style  x:Key="RoomsButtonStyle"
                 TargetType="Button">
@@ -18,103 +18,107 @@
             <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Padding" Value="0"/>
         </Style>
-
     </ContentPage.Resources>
 
     <ScrollView>
         <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="AUTO"/>
-            <RowDefinition Height="AUTO"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="50"/>
-        </Grid.ColumnDefinitions>
-        
-        <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="3" />
-
-        <ImageButton Source="strelochka.png"
-                     MaximumHeightRequest="40"
-                     MaximumWidthRequest="40"
-                     Margin="5,5,0,0"
-                     Grid.Row="0"
-                     BackgroundColor="Transparent"
-                     Clicked="GoBackButton_Clicked"
-                     x:Name="GoBackButton"
-                     HorizontalOptions="Start" />
-        
-        <Label Grid.Row="0"
-               FontSize="26"
-               Margin="0,5,0,0"
-               HorizontalOptions="Center"
-               Grid.ColumnSpan="3"
-               Text="{Binding Source={x:Reference PageCreateProblem}, Path=BindingContext.Room, StringFormat='{}Аудитория {0}'}" />
-
-        <Image x:Name="Image1"
-               Grid.Row="0"
-               Margin="0,0,240,0"
-               Source="tech_background.png"
-               WidthRequest="32"
-               HorizontalOptions="Center"
-               Grid.ColumnSpan="3"/>
-        
-        <RoundRectangle Grid.Row="1" Grid.RowSpan="3" Grid.Column="1"
-                        Fill="{StaticResource Gray100}"
-                        Margin="0,20,0,0"
-                        CornerRadius="25"/>
-
-        <RoundRectangle Grid.Row="1" Grid.Column="1"
-                        Fill="{StaticResource Gray200}"
-                        Margin="10,30,10,10"
-                        VerticalOptions="FillAndExpand"
-                        CornerRadius="25"/>
-
-        <RoundRectangle Grid.Row="2" Grid.Column="1"
-                        Fill="{StaticResource Gray200}"
-                        Margin="10,0,10,10"
-                        HeightRequest="{Binding Source={x:Reference EditorContainer}, Path=Height}"
-                        CornerRadius="25"/>
-
-        <Entry Grid.Row="1" Grid.Column="1"
-               MaxLength="11"
-               x:Name="PCID"
-               Placeholder="Номер компьютера"
-               FontSize="20"
-               TextColor="Black"
-               Text="{Binding PcNumEntrytext}"
-               VerticalTextAlignment="Start"
-               MinimumHeightRequest="150"
-               Margin="23,30,20,11"/>
-
-        <StackLayout Grid.Row="2" Grid.Column="1"
-                    x:Name="EditorContainer"
-                     VerticalOptions="StartAndExpand"
-                     Margin="20,0,20,0"
-                    Spacing="0">
-        <Editor  
-                AutoSize="TextChanges"
-               x:Name="Problem"
-               Placeholder="Проблема"
-               FontSize="20"
-               TextColor="Black"
-               Text="{Binding ProblemEntrytext}"
-               VerticalTextAlignment="Start"
-               WidthRequest="{Binding Source={x:Reference EditorContainer}, Path=Width}" />
-        </StackLayout>
-
-        <Button Grid.Row="3" Grid.Column="1"
-                Style="{DynamicResource RoomsButtonStyle}"
-                Command="{Binding AddProblemCommand}"
-                x:Name="SubmitButton"
-                Text="Отправить"
-                Margin="0,10,0,20"
-                Clicked="SubmitButton_Clicked"/>
-    </Grid>
+             <Grid.RowDefinitions>
+                 <RowDefinition Height="50"/>
+                 <RowDefinition Height="80"/>
+                 <RowDefinition Height="AUTO"/>
+                 <RowDefinition Height="AUTO"/>
+                 <RowDefinition Height="*"/>
+             </Grid.RowDefinitions>
+             
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="50"/>
+                 <ColumnDefinition Width="*"/>
+                 <ColumnDefinition Width="50"/>
+             </Grid.ColumnDefinitions>
+             
+             <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="3" />
+             
+             <ImageButton Source="strelochka.png"
+                          MaximumHeightRequest="40"
+                          MaximumWidthRequest="40"
+                          Margin="5,5,0,0"
+                          Grid.Row="0"
+                          BackgroundColor="Transparent"
+                          Clicked="GoBackButton_Clicked"
+                          x:Name="GoBackButton"
+                          HorizontalOptions="Start" />
+             
+             <Label Grid.Row="0"
+                    FontSize="22"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Grid.ColumnSpan="3"
+                    TextColor="White"
+                    Text="{Binding Source={x:Reference PageCreateProblem}, Path=BindingContext.Room, StringFormat='{}Ауд-я {0}'}" />
+             
+             <Image x:Name="Image1"
+                    Grid.Row="0"
+                    Margin="0,0,150,0"
+                    Source="tech_background.png"
+                    WidthRequest="32"
+                    HorizontalOptions="Center"
+                    Grid.ColumnSpan="3"/>
+             
+             <RoundRectangle Grid.Row="1" Grid.RowSpan="3" Grid.Column="1"
+                             Fill="{StaticResource Gray100}"
+                             Margin="0,20,0,0"
+                             CornerRadius="25"/>
+             
+             <RoundRectangle Grid.Row="1" Grid.Column="1"
+                             Fill="{StaticResource Gray200}"
+                             Margin="10,30,10,10"
+                             VerticalOptions="FillAndExpand"
+                             CornerRadius="25"/>
+             
+             <RoundRectangle Grid.Row="2" Grid.Column="1"
+                             Fill="{StaticResource Gray200}"
+                             Margin="10,0,10,10"
+                             HeightRequest="{Binding Source={x:Reference EditorContainer}, Path=Height}"
+                             CornerRadius="25"/>
+             
+             <Entry Grid.Row="1" Grid.Column="1"
+                    MaxLength="11"
+                    x:Name="PCID"
+                    Placeholder="Номер компьютера"
+                    PlaceholderColor="DarkSlateGray"
+                    FontSize="20"
+                    TextColor="Black"
+                    Text="{Binding PcNumEntrytext}"
+                    VerticalTextAlignment="Start"
+                    Margin="23,30,20,11"/>
+             
+             <StackLayout Grid.Row="2" Grid.Column="1"
+                          x:Name="EditorContainer"
+                          VerticalOptions="StartAndExpand"
+                          Margin="20,0,20,0"
+                          Spacing="0">
+                 
+                 <Editor AutoSize="TextChanges"
+                         x:Name="Problem"
+                         Placeholder="Проблема"
+                         Margin="0,0,0,0"
+                         PlaceholderColor="DarkSlateGray"
+                         FontSize="20"
+                         TextColor="Black"
+                         Text="{Binding ProblemEntrytext}"
+                         VerticalTextAlignment="Start"
+                         WidthRequest="{Binding Source={x:Reference EditorContainer}, Path=Width}" />
+                 
+             </StackLayout>
+             
+             <Button Grid.Row="3" Grid.Column="1"
+                     Style="{DynamicResource RoomsButtonStyle}"
+                     Command="{Binding AddProblemCommand}"
+                     x:Name="SubmitButton"
+                     Text="Отправить"
+                     Margin="0,10,0,20"
+                     Clicked="SubmitButton_Clicked"/>
+                 
+        </Grid>
     </ScrollView>
 </ContentPage>

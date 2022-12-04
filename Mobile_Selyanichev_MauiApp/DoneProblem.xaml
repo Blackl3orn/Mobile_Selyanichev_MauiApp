@@ -7,21 +7,16 @@
              x:Class="Mobile_Selyanichev_MauiApp.DoneProblem"
              Title="DoneProblem"
              BackgroundColor="{StaticResource Gray200}">
+ 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Rectangle Grid.Row="0" Fill="{StaticResource PrimaryRed}" Grid.ColumnSpan="2" />
 
-    
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
-
-            </Grid.RowDefinitions>
-
-            <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" />
-
-            
-          
-            <ImageButton Source="strelochka.png"
+        <ImageButton Source="strelochka.png"
                      MaximumHeightRequest="40"
                      MaximumWidthRequest="40"
                      Margin="5,5,0,0"
@@ -31,28 +26,27 @@
                      x:Name="GoBackButton"
                      HorizontalOptions="Start" />
 
-            <Label Grid.Row="0"
-                   FontSize="26"
-                   Margin="0,5,0,0"
-                   HorizontalOptions="Center"
-                   Grid.ColumnSpan="2"
-                   Text="Журнал" />
+        <Label Grid.Row="0"
+               FontSize="22"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Grid.ColumnSpan="2"
+               TextColor="White"
+               Text="Журнал" />
 
-            <Image x:Name="Image1"
-                   Grid.Row="0"
-                   Margin="0,0,170,0"
-                   Source="tech_background.png"
-                   WidthRequest="32"
-                   HorizontalOptions="Center"
-                   Grid.ColumnSpan="2"/>
+        <Image x:Name="Image1"
+               Grid.Row="0"
+               Margin="0,0,170,0"
+               Source="tech_background.png"
+               WidthRequest="32"
+               HorizontalOptions="Center"
+               Grid.ColumnSpan="2"/>
 
         <ScrollView Grid.Row="1">
             <CollectionView ItemsSource="{Binding Offices}">
-
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Office">
                         <Grid >
-
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="AUTO"/>
                                 <RowDefinition Height="AUTO"/>
@@ -94,11 +88,7 @@
                                    TextColor="Black"
                                    Margin="30,0,30,10"/>
 
-
-
-                            
                         </Grid>
-
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

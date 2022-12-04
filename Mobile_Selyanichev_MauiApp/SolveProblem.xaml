@@ -10,7 +10,7 @@
     <ContentPage.Resources>
 		<Style  x:Key="RoomsButtonStyle"
                 TargetType="Button">
-			<Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+			<Setter Property="BackgroundColor" Value="{StaticResource PrimaryRed}" />
 			<Setter Property="TextColor" Value="White" />
 			<Setter Property="HeightRequest" Value="45"/>
 			<Setter Property="WidthRequest" Value="200"/>
@@ -34,7 +34,7 @@
                 <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="3"  />
+            <Rectangle Grid.Row="0" Fill="{StaticResource PrimaryRed}" Grid.ColumnSpan="3"  />
 
 
 
@@ -49,15 +49,16 @@
                          HorizontalOptions="Start" />
 
             <Label Grid.Row="0"
-                   FontSize="26"
-                   Margin="0,5,0,0"
+                   FontSize="22"
+                   VerticalOptions="Center"
                    HorizontalOptions="Center"
                    Grid.ColumnSpan="3"
-                   Text="{Binding Source={x:Reference PageSolveProblem}, Path=BindingContext.Room, StringFormat='{}Аудитория {0}'}" />
+                   TextColor="White"
+                   Text="{Binding Source={x:Reference PageSolveProblem}, Path=BindingContext.Room, StringFormat='{}Ауд-я {0}'}" />
 
             <Image x:Name="Image1"
                        Grid.Row="0"
-                       Margin="0,0,240,0"
+                       Margin="0,0,150,0"
                        Source="tech_background.png"
                        WidthRequest="32"
                        HorizontalOptions="Center"

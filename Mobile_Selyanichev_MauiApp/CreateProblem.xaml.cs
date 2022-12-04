@@ -1,3 +1,4 @@
+
 using Mobile_Selyanichev_MauiApp.ViewModels;
 
 namespace Mobile_Selyanichev_MauiApp;
@@ -9,7 +10,6 @@ public partial class CreateProblem : ContentPage
         vm.Navigation = Navigation;
         BindingContext = vm;
         InitializeComponent();
-        
     }
 
     private void GoBackButton_Clicked(object sender, EventArgs e)
@@ -19,7 +19,12 @@ public partial class CreateProblem : ContentPage
 
     private void SubmitButton_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Запрос отправлен", "OK");
         Navigation.PopModalAsync();
+        this.PCID.IsEnabled = false;
+        this.PCID.IsEnabled = true;
+        this.Problem.IsEnabled = false;
+        this.PCID.IsEnabled = true;
     }
 
 }

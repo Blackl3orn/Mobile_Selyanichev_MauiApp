@@ -14,17 +14,12 @@ namespace Mobile_Selyanichev_MauiApp.ViewModels
         [ObservableProperty]
         INavigation navigation;
 
-
         public ObservableCollection<Office> Offices { get; set; }
-
-        [ObservableProperty]
-        Office  off = new Office { id="232"}; // не спрашивайте
 
         public SolveProblemViewModel(string room)
         {
             Offices = new();
             this.room = room;
-            //problems = new Problem();
             Update();
         }
 
@@ -32,7 +27,7 @@ namespace Mobile_Selyanichev_MauiApp.ViewModels
         {
             Offices.Clear();
             Thread.Sleep(100);
-            var problems = await GetProblemService.GetProblem(room); // НЕ СПРАШИВАЙТЕ 
+            var problems = await GetProblemService.GetProblem(room);
             foreach(var something in problems.office)
             {
                 Offices.Add(something);

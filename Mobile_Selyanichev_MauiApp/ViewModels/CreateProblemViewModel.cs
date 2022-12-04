@@ -26,15 +26,9 @@ namespace Mobile_Selyanichev_MauiApp.ViewModels
         [ObservableProperty]
         string room;
 
-        //AddProblemService addProblemService;
-
-        public CreateProblemViewModel(string room
-           // AddProblemService addProblemService
-            )
+        public CreateProblemViewModel(string room)
         {
-            //  this.addProblemService = addProblemService;
             this.room = room;
-            
         }
 
         [RelayCommand]

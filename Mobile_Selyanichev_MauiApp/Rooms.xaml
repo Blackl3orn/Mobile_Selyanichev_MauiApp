@@ -7,15 +7,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile_Selyanichev_MauiApp.Rooms"
-       
+             
              Title="Rooms"
              
              BackgroundColor="{StaticResource Gray200}">
+            
     
     <ContentPage.Resources>
+   
+            <Color x:Key="xxx">#512BD4</Color>
+        
         <Style  x:Key="RoomsButtonStyle"
                 TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource  xxx}"/>
             <Setter Property="TextColor" Value="White" />
             <Setter Property="WidthRequest" Value="50"/>
             <Setter Property="HeightRequest" Value="40"/>
@@ -23,9 +27,22 @@
             <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Padding" Value="0"/>
         </Style>
-       
+
+        <Style  x:Key="MarkButtonStyle"
+                TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Cyan100Accent}"/>
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="Margin" Value="40,0,0,30" />
+            <Setter Property="WidthRequest" Value="22"/>
+            <Setter Property="HeightRequest" Value="22"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        
     </ContentPage.Resources>
 
+   
     <Grid>
 
         
@@ -48,7 +65,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Row="0" Fill="{StaticResource Primary}" Grid.ColumnSpan="2"   />
+        <Rectangle Grid.Row="0" Fill="{DynamicResource  xxx}" Grid.ColumnSpan="2"   />
 
         <ImageButton Source="strelochka.png"
                      MaximumHeightRequest="40"
@@ -72,11 +89,13 @@
                      HorizontalOptions="End" />
 
         <Label Grid.Row="0"
-               FontSize="26"
-               Margin="0,5,0,0"
+               FontSize="22"
+               Margin="0,0,0,0"
                HorizontalOptions="Center"
+               VerticalOptions="Center"
                Grid.ColumnSpan="2"
-               Text="Аудитории" />
+                TextColor="White"
+               Text="Выбор Ауд-и" />
 
 
         <Image x:Name="Image1"
@@ -88,61 +107,102 @@
 
         <Button Grid.Row="1"
                 Style="{DynamicResource RoomsButtonStyle}"
+               
                 x:Name="Room221"
                 Text="221"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
 
+                                                                <Button Grid.Row="1"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room221mark"
+                                                                        Text="221"
+                                                                        Clicked="RoomButton_Clicked" />         
+        
         <Button Grid.Row="2"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room219"
                 Text="219"
+                
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-        
+
+                                                                <Button Grid.Row="2"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room219mark"
+                                                                        Text="219"
+                                                                        Clicked="RoomButton_Clicked" />
+
         <Button Grid.Row="3"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room218a"
                 Text="218a"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-        
+
+                                                                <Button Grid.Row="3"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room218amark"
+                                                                        Text="218a"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="4"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room218"
                 Text="218"
                 HorizontalOptions="Center"
-                Clicked="RoomButton_Clicked" />
-
+                Clicked="RoomButton_Clicked"
+                />
+                                                                <Button Grid.Row="4"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room218mark"
+                                                                        Text="218"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="5"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room217"
                 Text="217"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-
+                                                                <Button Grid.Row="5"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room217mark"
+                                                                        Text="217"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="6"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room216"
                 Text="216"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-        
+                                                                <Button Grid.Row="6"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room216mark"
+                                                                        Text="216"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="7"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room215"
                 Text="215"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-        
+                                                                <Button Grid.Row="7"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room215mark"
+                                                                        Text="215"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="8"
                 Style="{DynamicResource RoomsButtonStyle}"
                 x:Name="Room214"
                 Text="214"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
+                                                                <Button Grid.Row="8"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room214mark"
+                                                                        Text="214"
+                                                                        Clicked="RoomButton_Clicked" />
         
-        <Rectangle Grid.Row="9" Fill="{StaticResource Primary}" Grid.ColumnSpan="2" Margin="30,0,30,0" HeightRequest="5"/>
+        <Rectangle Grid.Row="9" Fill="{DynamicResource xxx}" Grid.ColumnSpan="2" Margin="30,0,30,0" HeightRequest="5"/>
         
         <Button Grid.Row="10"
                 Style="{DynamicResource RoomsButtonStyle}"
@@ -150,7 +210,11 @@
                 Text="213"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-
+                                                                <Button Grid.Row="10"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room213mark"
+                                                                        Text="213"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="4"
                 Grid.Column="1"
                 Margin="0,0,0,15"
@@ -159,7 +223,12 @@
                 Text="227"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-
+                                                                 <Button Grid.Row="4" Grid.Column="1"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room227mark"
+                                                                         Margin="40,0,0,45"
+                                                                        Text="227"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="5"
                 Grid.RowSpan="2"
                 Grid.Column="1"
@@ -169,7 +238,13 @@
                 Text="228"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-
+                                                                <Button Grid.Row="5" Grid.Column="1"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room228mark"
+                                                                         Grid.RowSpan="2"
+                                                                            Margin="40,0,0,45"
+                                                                        Text="228"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="6"
                 Grid.RowSpan="2"
                 Grid.Column="1"
@@ -179,7 +254,12 @@
                 Text="229"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-
+                                                                <Button Grid.Row="6" Grid.Column="1"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        Grid.RowSpan="2"
+                                                                        x:Name="Room229mark"
+                                                                        Text="229"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="7"
                 Grid.RowSpan="2"
                 Grid.Column="1"
@@ -189,7 +269,13 @@
                 Text="230"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-        
+                                                                <Button Grid.Row="7" Grid.Column="1"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room230mark"
+                                                                         Grid.RowSpan="2"
+                                                                        Margin="40,20,0,30"
+                                                                        Text="230"
+                                                                        Clicked="RoomButton_Clicked" />
         <Button Grid.Row="10"
                 Grid.Column="1"
                 Style="{DynamicResource RoomsButtonStyle}"
@@ -197,6 +283,10 @@
                 Text="205"
                 HorizontalOptions="Center"
                 Clicked="RoomButton_Clicked" />
-
+                                                                <Button Grid.Row="10" Grid.Column="1"
+                                                                        Style="{DynamicResource MarkButtonStyle}"
+                                                                        x:Name="Room205mark"
+                                                                        Text="205"
+                                                                        Clicked="RoomButton_Clicked" />
     </Grid>
 </ContentPage>

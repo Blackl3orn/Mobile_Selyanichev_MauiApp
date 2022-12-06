@@ -90,7 +90,7 @@
                     TextColor="Black"
                     Text="{Binding PcNumEntrytext}"
                     VerticalTextAlignment="Start"
-                    Margin="23,30,20,11"/>
+                    Margin="20,30,20,0"/>
              
              <StackLayout Grid.Row="2" Grid.Column="1"
                           x:Name="EditorContainer"
